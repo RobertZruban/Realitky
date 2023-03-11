@@ -32,7 +32,7 @@ st.subheader('Multi Model Predictions')
 
 
 def load_data():
-    df=pd.read_csv(r'C:\Users\roboz.DESKTOP-F86F289\Desktop\Python\Final_scrapers\Location_centrum_csv.csv')
+    df=pd.read_csv(r'C:\Users\roboz.DESKTOP-F86F289\Desktop\Python\Final_scrapers\Flats_only.csv')
     #df=df.drop(['latitude'],axis=1)
     #df=df.drop(['longitude'],axis=1)
     df=df[df['Cena']>0]
