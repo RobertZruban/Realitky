@@ -204,6 +204,7 @@ trio-websocket==0.9.2
 typing_extensions==4.5.0
 tzdata==2022.7
 tzlocal==4.2
+Unidecode==0.04.14
 unicodecsv==0.14.1
 uri-template==1.2.0
 urllib3==1.26.14
