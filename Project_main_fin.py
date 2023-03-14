@@ -15,9 +15,9 @@ import matplotlib.pyplot as plt
 import time
 import requests
 import json
+import os
 
 st.title('Real Estate Predictions')
-
 
 def run_status():
     latest_iteration = st.empty()
@@ -32,7 +32,7 @@ st.subheader('Multi Model Predictions')
 
 
 def load_data():
-    df=pd.read_csv(r'C:\Users\roboz.DESKTOP-F86F289\Desktop\Python\Final_scrapers\Flats_only.csv')
+    df=pd.read_csv('Flats_only.csv')
     #df=df.drop(['latitude'],axis=1)
     #df=df.drop(['longitude'],axis=1)
     df=df[df['Cena']>0]
