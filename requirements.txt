@@ -9,7 +9,7 @@ arrow==1.2.3
 asttokens==2.2.1
 async-generator==1.10
 attrs==22.2.0
-awesome-slugify == 1.6.5
+awesome-slugify
 auto-py-to-exe==2.32.0
 Babel==2.11.0
 backcall==0.2.0
@@ -137,3 +137,4 @@ psutil==5.9.4
 pure-eval==0.2.2
 pyarrow==11.0.0
 pybloom-live==4.0.0
+Unidecode
