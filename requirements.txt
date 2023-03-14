@@ -10,7 +10,6 @@ asttokens==2.2.1
 async-generator==1.10
 attrs==22.2.0
 auto-py-to-exe==2.32.0
-awesome-slugify==1.6.5
 Babel==2.11.0
 backcall==0.2.0
 beautifulsoup4==4.11.1
