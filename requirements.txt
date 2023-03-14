@@ -231,5 +231,3 @@ yahoofinancials==1.12
 yarg==0.1.9
 yfinance==0.2.4
 zipp==3.11.0
-zope.event==4.6
-zope.interface==5.5.2
