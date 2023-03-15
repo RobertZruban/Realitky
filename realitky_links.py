@@ -1,28 +1,18 @@
-import openpyxl  
 import pprint
-pp = pprint.PrettyPrinter(indent=4)
-import random
-import requests
-import urllib.request
-import time
 from bs4 import BeautifulSoup
-import folium
-
 from selenium import webdriver  
 from selenium.common.exceptions import NoSuchElementException  
 from selenium.webdriver.common.keys import Keys  
 from bs4 import BeautifulSoup
 import pandas as pd
+
+pp = pprint.PrettyPrinter(indent=4)
 df = pd.DataFrame()
 url = 'https://www.reality.sk/nitriansky-kraj/?page='
-main_url = 'https://www.reality.sk'
-#'https://mobilne-telefony.heureka.sk', 'https://inteligentne-hodinky.heureka.sk/', 'https://televizor.heureka.sk/', 'https://sluchadla.heureka.sk/'
-               
+main_url = 'https://www.reality.sk'         
 kraje = ['https://www.reality.sk/bratislavsky-kraj/?page=', 'https://www.reality.sk/kosicky-kraj/?page=', 'https://www.reality.sk/nitriansky-kraj/?page=', 'https://www.reality.sk/trnavsky-kraj/?page=', 'https://www.reality.sk/trenciansky-kraj/?page=', 'https://www.reality.sk/zilinsky-kraj/?page=', 'https://www.reality.sk/banskobystricky-kraj/?page=', 'https://www.reality.sk/presovsky-kraj/?page=']
 
-    
-    
-   
+### List names ### 
 Values_all = []   
 latitude_direction = []
 longitude_direction = []
@@ -46,17 +36,11 @@ Káblová_televízia = []
 ALL_data = {}  
 Region = []
 
-
- 
+count  = 0
 l = 0
 j = 0
-
-
-
 browser = webdriver.Chrome(r'C:\Users\roboz.DESKTOP-F86F289\Desktop\chromedrive\chromedriver')
 links = []
- 
-count  = 0
 pokus = []  
 
 for l in range(0,len(kraje)):
