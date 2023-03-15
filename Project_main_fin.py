@@ -14,8 +14,6 @@ from math import sqrt
 import matplotlib.pyplot as plt
 import time
 import requests
-import json
-import os
 
 st.title('Real Estate Predictions')
 
@@ -33,12 +31,7 @@ st.subheader('Multi Model Predictions')
 
 def load_data():
     df=pd.read_csv('Flats_only.csv')
-    #df=df.drop(['latitude'],axis=1)
-    #df=df.drop(['longitude'],axis=1)
     df=df[df['Cena']>0]
-    #df.rename(columns={'statezip':'zip'}, inplace=True)
-    #df['zip']=df['zip'].str.replace('WA','').astype(int)
-    #df['floors']=df['floors'].astype(int)
     df=df[df['Izby']>0]
     df=df[df['Plocha']>0]
     df=df[df['longitude']>0]
@@ -53,13 +46,10 @@ st.sidebar.subheader('Property Options')
 # Sidebar Options:
 params={
 'Izby' : st.sidebar.selectbox('Number of rooms',(1,2,3,4,5,6)),
-#'bathrooms' : st.sidebar.selectbox('Bathrooms',(1,1.5,2,2.5,3,3.5,4,4.5,5)),
-#'floors' : st.sidebar.selectbox('Floors',(df['floors'].unique())),
 'Plocha' : st.sidebar.slider('Flat size in meters', 0,120,step=1),
 'distance_from_centre' : st.sidebar.slider('Distance from Bratislava (km)', 0,350,step=1)
 #'Kraj' : st.sidebar.selectbox('Kraj',('Nitriansky', 'Banskobystrický', 'Trnavský', 'Bratislava', 'Trenčiansky', 'Žilinský', 'Prešovský', 'Bratislavský', 'Košice', 'Košický '))
-#'waterfront':1 if st.sidebar.checkbox('Waterfront') else 0
-    
+
 }
 
 
@@ -78,9 +68,6 @@ def map_df(df):
     df.reset_index()
     df=df[df['latitude']==df['latitude']]
     df =df[df['longitude']==df['longitude']]
-    
-
-
     #df['lon']=[get_locations(df.iloc[[i]]['zip'].values.astype(int))[1] for i in range(len(df))]
     return df
 
