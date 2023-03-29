@@ -62,9 +62,8 @@ def get_locations(zip):
 
 def map_df(df):
     df=df[df['Izby']==params['Izby']]
-    df=df[df['Plocha']==params['Plocha']]
-    df = df[df['distance_from_centre']==df['distance_from_centre']]
-    #df=df[(df['Plocha_living']>0.9*params['Plocha']) & (df['Plocha_living']<1.1*params['Plocha'])]
+    df=df[(df['Plocha']>0.8*params['Plocha']) & (df['Plocha']<1.2*params['Plocha'])]
+    df=df[(df['distance_from_centre']>0.8*params['distance_from_centre']) & (df['distance_from_centre']<1.2*params['distance_from_centre'])]
     df.reset_index()
     df=df[df['latitude']==df['latitude']]
     df =df[df['longitude']==df['longitude']]
